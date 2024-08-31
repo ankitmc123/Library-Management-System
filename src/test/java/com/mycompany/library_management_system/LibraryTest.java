@@ -16,5 +16,13 @@ public class LibraryTest {
     public LibraryTest() {
     }
 
+    @Test
+    public void addNewBook(){
+        Library l=new Library();
+        Books b1=new Books("1","book1","ankit",2021);
+        assertEquals(b1,l.addBook(b1));
+
+        
+    }
     
 }
