@@ -16,7 +16,11 @@ public class Library {
     Library(){
         this.book_self=new HashMap<>();
     }
-        public Books addBook(Books book){
+    public Books addBook(Books book)throws Exception{
+        
+        if(book_self.containsKey(book.getIsbn())){
+            throw new Exception("Book is already added");
+        }
         book_self.put(book.getIsbn(), book);
         return book;
     }

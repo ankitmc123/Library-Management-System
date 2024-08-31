@@ -17,19 +17,23 @@ public class LibraryTest {
     }
 
     @Test
-    public void addNewBook(){
+    public void addNewBook()throws Exception{
         Library l=new Library();
         Books b1=new Books("1","book1","ankit",2021);
         assertEquals(b1,l.addBook(b1));
 
         
     }
-        @Test
-    public void alreadyadded() { // here we add book with same isbn no.
+   
+    @Test
+    public void alreadyAdded() { // here we add book with same isbn no.
         Library l=new Library();
         Books b1=new Books("1","book1","ankit",2021);
         Books b2=new Books("1","book1","ankit",2021);
-        assertEquals(b1,l.addBook(b2));
+        assertThrows(Exception.class,()->{
+            l.addBook(b1);
+            l.addBook(b2);
+        });
 
 
         
